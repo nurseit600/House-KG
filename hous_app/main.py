@@ -1,12 +1,12 @@
 from fastapi import FastAPI, HTTPException
-from hous_app.api import house
+from api import house
+from db.database import SessionLocal
+from api import auth
 import redis.asyncio as redis
 from contextlib import asynccontextmanager
-from hous_app.db.database import SessionLocal
 from fastapi_limiter import FastAPILimiter
 from sqlalchemy.orm import Session
 import uvicorn
-from hous_app.api import auth
 
 
 @asynccontextmanager
